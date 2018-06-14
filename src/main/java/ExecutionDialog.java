@@ -1,4 +1,3 @@
-import com.sun.deploy.Environment;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -66,6 +65,11 @@ public class ExecutionDialog extends JDialog {
 
             ext.append(getExt(url));
 
+            System.setProperty("http.proxyHost", "172.20.0.1");
+            System.setProperty("http.proxyPort", "3128");
+            System.setProperty("https.proxyHost", "172.20.0.1");
+            System.setProperty("https.proxyPort", "3128");
+
             HttpURLConnection connection = (HttpURLConnection)new URL(url).openConnection();
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
@@ -103,10 +107,6 @@ public class ExecutionDialog extends JDialog {
             ext = "." + m.group(1);
         }
         return ext;
-    }
-
-    public static void main(String[] args){
-
     }
 
     public static ArrayList<String> getAllMotifs(String prefix){

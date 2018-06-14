@@ -7,4 +7,5 @@ public class ExecutionForm {
     public JLabel currentIndex;
     public JLabel errors;
     public JLabel currentPath;
+    private JLabel queuedLbl;
 }
