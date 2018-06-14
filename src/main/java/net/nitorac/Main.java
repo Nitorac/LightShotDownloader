@@ -1,3 +1,5 @@
+package net.nitorac;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -9,6 +11,7 @@ public class Main {
 
     public static MainForm mF;
     public static JFrame root;
+    public static ResultDialog resDiag;
 
     public static void main(String[] args) {
         root = new JFrame("LightShot Downloader");
@@ -42,7 +45,7 @@ public class Main {
                     return;
                 }
             }
-            new ExecutionDialog(root, "Processus", true, mF.motifEditText.getText().trim(), outputDir);
+            resDiag = new ResultDialog(root, "Processus", true, mF.motifEditText.getText().trim(), outputDir);
         });
     }
 

@@ -1,3 +1,5 @@
+package net.nitorac;
+
 import javax.swing.*;
 
 public class MainForm extends JPanel{
